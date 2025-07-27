@@ -1,6 +1,13 @@
 package bank.domain;
 
+import jakarta.persistence.*;
+
+@Entity
 public class Customer {
+	@Id
+	@GeneratedValue
+	private int Id;
+
 	private String name;
 
 	public Customer(String name) {

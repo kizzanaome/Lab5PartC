@@ -1,11 +1,23 @@
 package bank.domain;
 
+import jakarta.persistence.*;
+import org.apache.logging.log4j.util.Lazy;
+
 import java.util.*;
 
-
+@Entity
 public class Account {
+
+	@Id
+	@GeneratedValue
+	private int id;
+
 	long accountnumber;
+
+	@OneToMany
 	Collection<AccountEntry> entryList = new ArrayList<AccountEntry>();
+
+	@OneToOne
 	Customer customer;
 
 	
